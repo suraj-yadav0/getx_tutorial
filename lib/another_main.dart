@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class AnotherScreen extends StatefulWidget {
   const AnotherScreen({super.key});
@@ -12,9 +13,19 @@ class _AnotherScreenState extends State<AnotherScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Tutorial"),
+        backgroundColor: Colors.black,
+        title: const Text("Tutorial",style: TextStyle(color: Colors.white),),
       ),
-      body: const Column(children: [Center(child: Text("Go to Next Screen")),],),
+      body: Column(children: [
+        Container(height: MediaQuery.of(context).size.height * .3,
+      width: Get.width * .3,
+      color: Colors.amber,
+      child: const Center(child: Text("Hello World"),),),
+      Container(height: MediaQuery.of(context).size.height * .4,
+      width: Get.width * .3,
+      color: Colors.red,
+      child: const Center(child: Text("Hello World"),),)
+      ],)
     );
   }
 }
